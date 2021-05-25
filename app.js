@@ -1,15 +1,27 @@
 const yargs = require('yargs');
 
 yargs.command({
-    command: 'hi',
-    describe: 'Dit bonjour dans la console',
+    command: 'list',
+    describe: 'Liste toutes mes notes',
     handler: () => {
-        console.log("Kikoo lol");
+        console.log("Voici la liste des notes");
     }
 }).command({
-    command: 'dalek',
-    describe: "Pousse le cri d'un dalek",
+    command: 'add',
+    describe: "Ajoute une note",
     handler: () => {
-        console.log("EXTERMINATEEEEEEEE");
+        console.log("Chaud pour ajouter une note");
+    }
+}).command({
+    command: 'remove',
+    describe: "Supprime une note",
+    handler: () => {
+        console.log("Chaud pour supprimer une note");
+    }
+}).command({
+    command: 'read',
+    describe: "Affiche le détail d'une note",
+    handler: () => {
+        console.log("Voici le détail d'une note");
     }
 }).argv;
