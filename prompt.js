@@ -8,7 +8,7 @@ prompt.start();
 
 prompt.get(['firstname'],(err, result) => {
     if(err) {
-        console.log("Y a un blem!")
+        console.log("Y a un blem!");
     }
     else {
         console.log(`Bonjour, ${result.firstname}`);
