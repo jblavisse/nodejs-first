@@ -1,27 +1,16 @@
-const yargs = require('yargs');
+const fs = require("fs");
 
-yargs.command({
-    command: 'list',
-    describe: 'Liste toutes mes notes',
-    handler: () => {
-        console.log("Voici la liste des notes");
+// objet javascript
+const newHighScore = {
+    player: "JEA",
+    score:  123000
+};
+
+const newHighScoreJSON = JSON.stringify(newHighScore);
+
+fs.writeFile("highscore.json",newHighScoreJSON,(err) => {
+    if(err) console.log(err);
+    else {
+        console.log("Le nouveau score a été sauvegardé");
     }
-}).command({
-    command: 'add',
-    describe: "Ajoute une note",
-    handler: () => {
-        console.log("Chaud pour ajouter une note");
-    }
-}).command({
-    command: 'remove',
-    describe: "Supprime une note",
-    handler: () => {
-        console.log("Chaud pour supprimer une note");
-    }
-}).command({
-    command: 'read',
-    describe: "Affiche le détail d'une note",
-    handler: () => {
-        console.log("Voici le détail d'une note");
-    }
-}).argv;
+});
